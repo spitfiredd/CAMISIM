@@ -3,7 +3,10 @@ __version__ = '0.1.2'
 
 import os
 import sys
-from collections import Iterable
+try:
+    from collections.abc import Iterable
+except ImportError:
+    from collections import Iterable
 from io import StringIO
 if sys.version_info < (3,):
     from ConfigParser import SafeConfigParser as ConfigParser
